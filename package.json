@@ -1,5 +1,7 @@
 {
   "name": "whats-quackin",
+  "proxy": "http://localhost:6262",
+  "main": "server/index.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
