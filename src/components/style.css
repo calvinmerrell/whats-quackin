@@ -22,4 +22,12 @@
     width: 100%;
     justify-content: space-evenly;
   }
+
+  .product_section {
+    width: 100vw;
+    height: 20vh;
+    border: 2px black;
+    margin: 20px;
+    background-color: #ccbea3;
+  }
   

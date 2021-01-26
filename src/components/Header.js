@@ -49,7 +49,7 @@ const Header = (props) => {
 
     return (
         <header className="App-header">
-            <h1 className="header-title">WR7 GOLF LEAGUE</h1>
+            <h1 className="header-title">What's Quackin</h1>
             <nav className="nav-list">
                 <ul>
                     <Link className="App-link" to='/'>
@@ -60,19 +60,19 @@ const Header = (props) => {
                         <li>Products</li>
                     </Link>
 
-                    <Link className="App-link" to='/Add Product'>
+                    <Link className="App-link" to='/AddProduct'>
                         <li>Add Product</li>
                     </Link>
 
-                    <Link className="App-link" to='/Duck Calls'>
+                    <Link className="App-link" to='/DuckCalls'>
                         <li>Duck Calls</li>
                     </Link>
 
-                    <Link className="App-link" to='/Goose Calls'>
+                    <Link className="App-link" to='/GooseCalls'>
                         <li>Goose Calls</li>
                     </Link>
 
-                    <Link className="App-link" to='/Call Blanks'>
+                    <Link className="App-link" to='/CallBlanks'>
                         <li>Call Blanks</li>
                     </Link>
                 </ul>

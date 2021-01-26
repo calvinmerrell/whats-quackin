@@ -13,9 +13,9 @@ export default(
       <Route exact path='/' component={Home} />
       <Route exact path='/products' component={Products} />
       <Route exact path='/products/:product_id' component={Products} />
-      <Route exact path='/products' component={DuckCalls} />
-      <Route exact path='/products' component={GooseCalls} />
-      <Route exact path='/products' component={CallBlanks} />
+      <Route exact path='/duckcalls' component={DuckCalls} />
+      <Route exact path='/goosecalls' component={GooseCalls} />
+      <Route exact path='/callblanks' component={CallBlanks} />
       <Route exact path="/register"><Register /></Route>
       <Route component={NotFound}/>
     </Switch>

@@ -5,9 +5,9 @@ import './style.css'
 const Home = (props) => {
     return(
         <div>
-            <p> SECTION for Duck Calls </p>
-            <p> SECTION for Goose Calls </p>
-            <p> SECTION for Call Blanks </p>
+            <p className="product_section"> SECTION for Duck Calls </p>
+            <p className="product_section"> SECTION for Goose Calls </p>
+            <p className="product_section"> SECTION for Call Blanks </p>
         </div>
 
     )
