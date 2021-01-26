@@ -2,10 +2,10 @@ require('dotenv').config()
 const express = require ('express')
 const massive = require('massive')
 const session = require('express-session')
-const authctrl = require('./controllers/authController')
-const authenticateUser = require('./middlewares/authenticateUser')
+const authctrl = require('./controllers/authControllers')
+// const authenticateUsrser = require('./middlewares/authenticateUser')
 
-const {SERVER_PORT, DB_STRING, SESSION_SECRET} = process.env
+const {SERVER_PORT, DATA_STRING, SESSION_SECRET} = process.env
 
 const app = express();
 
@@ -21,7 +21,11 @@ app.use(session({
         maxAge: 100 * 60 * 60 * 24 * 365
     }
 }));
-
+// auth endpoints
+app.post('/auth/register', authctrl.register);
+app.post('/auth/login', authctrl.login);
+app.get('/auth/user', authctrl.getUserSession);
+app.delete('/auth/logout', authctrl.logout);
 //EndPoints
 
 
@@ -29,7 +33,7 @@ app.use(session({
 
 // connect our server to our db
 massive({
-    connectionString: DB_STRING,
+    connectionString: DATA_STRING,
     ssl: {
         rejectUnauthorized: false
     }
