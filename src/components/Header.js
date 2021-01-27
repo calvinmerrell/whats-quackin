@@ -3,11 +3,13 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import {connect} from 'react-redux'
+import {useDispatch} from 'react-redux'
+import {loginUser} from '..//Redux/userReducer'
 // import './Header.scss'
 
 const Header = (props) => {
 
+    const dispatch = useDispatch()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
@@ -22,6 +24,7 @@ const Header = (props) => {
         }
         axios.post('/auth/login', body).then(
             (res) => {
+                dispatch(loginUser(res.data))
                 console.log(res.data)
                 setUsername("")
                 setPassword("")
@@ -107,8 +110,4 @@ const Header = (props) => {
     )
 }
 
-function mapStateToProps(reduxState){
-    return reduxState
-}
-
-export default connect(mapStateToProps)(withRouter(Header))
+export default withRouter(Header)

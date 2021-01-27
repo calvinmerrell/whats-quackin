@@ -10,10 +10,10 @@ const LOGIN_USER = 'LOGIN_USER'
 const LOGOUT = 'LOGOUT'
 
 // action creators
-export function loginUser(username){
+export function loginUser(payload){
     return{
         type: LOGIN_USER,
-        payload: username,
+        payload 
     }
 }
 
