@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { withRouter } from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
 import './style.css'
 
 const Register = (props) => {
+    const history = useHistory()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [first_name, setFirst_name] = useState('')
     const [last_name, setLast_name] = useState('')
+    const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
 
     const handleRegister = () => {
@@ -16,7 +19,8 @@ const Register = (props) => {
             username: username,
             password: password,
             first_name: first_name,
-            last_name: last_name
+            last_name: last_name,
+            email: email
         }
         axios.post('/auth/register', body).then(
             (res) => {
@@ -25,7 +29,9 @@ const Register = (props) => {
                 setPassword("")
                 setFirst_name("")
                 setLast_name("")
+                setEmail("")
                 setMessage("You are now registered")
+                history.push('/')
             })
     }
 
@@ -50,6 +56,11 @@ const Register = (props) => {
             <div className="row">
                 <div className="col">
                     <input className="registration-inputs" placeholder="Last Name" onChange={(e) => setLast_name(e.target.value)}></input>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <input className="registration-inputs" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
                 </div>
             </div>
 

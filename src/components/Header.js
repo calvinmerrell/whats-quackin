@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import {useDispatch} from 'react-redux'
 import {loginUser} from '..//Redux/userReducer'
+import {connect} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 // import './Header.scss'
 
 const Header = (props) => {
 
     const dispatch = useDispatch()
+    const history = useHistory()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
@@ -25,10 +28,11 @@ const Header = (props) => {
         axios.post('/auth/login', body).then(
             (res) => {
                 dispatch(loginUser(res.data))
+                history.push('/')
                 console.log(res.data)
                 setUsername("")
                 setPassword("")
-                setMessage(username + " on the tee")
+                setMessage("Welcome " + username )
                 setIsLoggedIn(true)
             })
             .catch(() => {
@@ -55,30 +59,30 @@ const Header = (props) => {
         <header className="App-header">
             <h1 className="header-title">What's Quackin</h1>
             <nav className="nav-list">
-                <ul>
+                <ul className="menu-items">
                     <Link className="App-link" to='/'>
                         <li>Home</li>
                     </Link>
 
-                    <Link className="App-link" to='/Products'>
+                    {props.user.is_admin ? (<Link className="App-link" to='/Products'>
                         <li>Products</li>
-                    </Link>
+                    </Link>) : null }
 
-                    <Link className="App-link" to='/AddProduct'>
+                    {props.user.is_admin ? (<Link className="App-link" to='/AddProduct'>
                         <li>Add Product</li>
-                    </Link>
+                    </Link>) : null }
 
-                    <Link className="App-link" to='/DuckCalls'>
+                    <a href="#duckCalls">
                         <li>Duck Calls</li>
-                    </Link>
+                    </a>
 
-                    <Link className="App-link" to='/GooseCalls'>
+                    <a href="#gooseCalls">
                         <li>Goose Calls</li>
-                    </Link>
+                    </a>
 
-                    <Link className="App-link" to='/CallBlanks'>
+                    <a href="#callBlanks">
                         <li>Call Blanks</li>
-                    </Link>
+                    </a>
                 </ul>
                 <div className="login-container">
 
@@ -109,5 +113,8 @@ const Header = (props) => {
         </header>
     )
 }
+function mapStateToProps(reduxState){
+    return reduxState
+}
 
-export default withRouter(Header)
+export default connect(mapStateToProps)(withRouter(Header))

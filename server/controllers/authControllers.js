@@ -6,7 +6,7 @@ module.exports = {
       const db = req.app.get('db');
       
       // need user info from the registering user
-      const {username, password, first_name, last_name, is_admin} = req.body;
+      const {username, password, first_name, last_name, email, is_admin} = req.body;
 
       const [existingUser] = await db.auth.get_user([username])
 
@@ -20,10 +20,11 @@ module.exports = {
       const hash = bcrypt.hashSync(password,salt);
 
         //insert the newUser into the db
-      const [newUser] = await db.auth.register_user([username, hash, first_name, last_name, is_admin])
+      const [newUser] = await db.auth.register_user([username, hash, first_name, last_name, email, is_admin])
       delete newUser.hash;
       delete newUser.first_name;
       delete newUser.last_name;
+      delete newUser.email;
 
       //create a session for the new user which logs them in
       req.session.user =  newUser
