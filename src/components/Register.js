@@ -39,7 +39,7 @@ const Register = (props) => {
     }
 
     return (
-        <div className="container">
+        <div className="reg-container">
             <p>{message}</p>
             <div className="row">
                 <div className="col">

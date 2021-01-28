@@ -19,6 +19,8 @@ const Products = (props) => {
                     <p>{products.product_name}{products.call_style}{products.wood_type}{products.price}</p>
                 </Link>
             ))}
+
+            <p> Goose Call here </p>
         </div>
     )
 }

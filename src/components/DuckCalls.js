@@ -19,6 +19,7 @@ const DuckCalls = (props) => {
                     <p>{products.product_name}{products.call_style}{products.wood_type}{products.price}</p>
                 </Link>
             ))}
+            <p> duck Call here </p>
         </div>
     )
 }

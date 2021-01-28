@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-import {withRouter} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import {useDispatch} from 'react-redux'
-import {loginUser} from '..//Redux/userReducer'
-import {connect} from 'react-redux'
-import {useHistory} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { loginUser } from '..//Redux/userReducer'
+import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 // import './Header.scss'
 
 const Header = (props) => {
@@ -32,7 +32,7 @@ const Header = (props) => {
                 console.log(res.data)
                 setUsername("")
                 setPassword("")
-                setMessage("Welcome " + username )
+                setMessage("Welcome " + username)
                 setIsLoggedIn(true)
             })
             .catch(() => {
@@ -66,23 +66,27 @@ const Header = (props) => {
 
                     {props.user.is_admin ? (<Link className="App-link" to='/Products'>
                         <li>Products</li>
-                    </Link>) : null }
+                    </Link>) : null}
 
                     {props.user.is_admin ? (<Link className="App-link" to='/AddProduct'>
                         <li>Add Product</li>
-                    </Link>) : null }
+                    </Link>) : null}
 
-                    <a href="#duckCalls">
+                    <Link className="App-link" to='/DuckCalls'>
                         <li>Duck Calls</li>
-                    </a>
+                    </Link>
 
-                    <a href="#gooseCalls">
+                    <Link className="App-link" to='/GooseCalls'>
                         <li>Goose Calls</li>
-                    </a>
+                    </Link>
 
-                    <a href="#callBlanks">
+                    <Link className="App-link" to='/CallBlanks'>
                         <li>Call Blanks</li>
-                    </a>
+                    </Link>
+
+                    <Link className="App-link" to='/cart'>
+                        <img className="cart-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9e5mt0II_7vLT5K4uqWufdqAWhzT-188h2g&usqp=CAU" alt="Shopping Cart Icon"></img>
+                    </Link>
                 </ul>
                 <div className="login-container">
 
@@ -104,7 +108,7 @@ const Header = (props) => {
                     {isLoggedIn && <Button variant="primary" onClick={handleLogout}>Log out</Button>}
 
                     {!isLoggedIn && <Link className="App-link" to='/register'>
-                        <p>Register</p> 
+                        <p>Register</p>
                     </Link>}
                 </div>
 
@@ -113,7 +117,7 @@ const Header = (props) => {
         </header>
     )
 }
-function mapStateToProps(reduxState){
+function mapStateToProps(reduxState) {
     return reduxState
 }
 

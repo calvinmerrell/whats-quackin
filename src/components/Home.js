@@ -9,23 +9,23 @@ const Home = (props) => {
         <div>
             <p className="product_section" id="duckCalls">
                 SECTION for Duck Calls
-                 <Link className="App-link" to='/DuckCalls'>
-                    <li>Duck Calls</li>
-                </Link> 
+                <Link className="App-link" to='/DuckCalls'>
+                <button className="shop-button">Shop Duck Calls</button>
+                </Link>
             </p>
-            
+
             <p className="product_section" id="gooseCalls">
                 SECTION for Goose Calls
-                  <Link className="App-link" to='/GooseCalls'>
-                    <li>Goose Calls</li>
-                </Link> 
+                <Link className="App-link" to='/GooseCalls'>
+                <button className="shop-button">Shop Goose Calls</button>
+                </Link>
             </p>
 
             <p className="product_section" id="callBlanks">
                 SECTION for Call Blanks
-                  <Link className="App-link" to='/CallBlanks'>
-                    <li>Call Blanks</li>
-                </Link> 
+                <Link className="App-link" to='/CallBlanks'>
+                    <button className="shop-button">Shop Call Blanks</button>
+                </Link>
             </p>
         </div>
 

@@ -22,7 +22,27 @@
     justify-content: space-evenly;
   }
 
+  .cart-icon{
+    width: 5vw;
+    height: 5vh;
+  }
+
+  .reg-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 40vh;
+    background-color: rgb(161, 141, 114);
+    border: black 2px;
+  }
+
   .product_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 50vh;
     border: 2px black;
@@ -62,7 +82,7 @@
                 padding: 5px 10px;
                 
             }
-        }
+          }
     }
     
     .login-container{

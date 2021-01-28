@@ -7,18 +7,20 @@ import DuckCalls from './components/DuckCalls'
 import GooseCalls from './components/GooseCalls'
 import CallBlanks from './components/CallBlanks'
 import Register from './components/Register'
+import Cart from './components/Cart'
 import NotFound from './components/NotFound'
 
 export default(
     <Switch>
-      <Route exact path='/' component={Home} />
       <Route exact path='/products' component={Products} />
       <Route exact path='/products/:product_id' component={Products} />
-      <Route exact path='/addproduct' component={AddProduct}/>
+      <Route exact path='/addproduct' component={AddProduct} />
       <Route exact path='/duckcalls' component={DuckCalls} />
       <Route exact path='/goosecalls' component={GooseCalls} />
       <Route exact path='/callblanks' component={CallBlanks} />
+      <Route exact path='/cart' component={Cart} />
       <Route exact path="/register"><Register /></Route>
+      <Route path='/' component={Home} />
       <Route component={NotFound}/>
     </Switch>
 )
