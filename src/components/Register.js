@@ -31,6 +31,9 @@ const Register = (props) => {
                 setLast_name("")
                 setEmail("")
                 setMessage("You are now registered")
+                setTimeout(() => {
+                    setMessage('')
+                }, 4000)
                 history.push('/')
             })
     }
