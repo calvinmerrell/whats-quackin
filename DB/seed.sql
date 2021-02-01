@@ -19,7 +19,8 @@
 --     product_name VARCHAR(30) not null,
 --     call_style VARCHAR(30),
 --     wood_type VARCHAR(30),
---     price integer
+--     price integer,
+--     image bytea
 --     )
 
 -- CREATE TABLE orders (
