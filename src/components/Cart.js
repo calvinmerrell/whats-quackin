@@ -1,17 +1,29 @@
-// import React, { useState, useEffect } from 'react'
-// // import axios from 'axios'
-// // import { Link } from 'react-router-dom'
-// import './style.css'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import './cart.css'
 
+class Cart extends Component {
+  render() {
+    return (
+      <div className="container">
+        <h1 className="cart-title"> YOUR CART </h1>
 
+        <div className="cart-hold">
+          {this.props.cart.map((product) => {
+            return (
+              <div className="cart-product" key={product.id}>
+                <p>{product.name}</p>
+                <p>{product.price}</p>
+              </div>
+            )
+          })}
+        </div>
+        <h2 className="total">TOTAL: ${this.props.total}</h2>
+      </div>
+    )
+  }
+}
 
-// const Cart = (props) => {
-//     return (
-//         <div>
-//             <p className="product-section">Shopping CART form</p>
-            
-//         </div>
-//     )
-// }
- 
-// export default Cart;
+const mapStateToProps = (reduxState) => reduxState.cart
+
+export default connect(mapStateToProps)(Cart)
