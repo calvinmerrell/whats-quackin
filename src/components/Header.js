@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
@@ -18,6 +18,16 @@ const Header = (props) => {
     const [message, setMessage] = useState('')
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
+    useEffect(()=>{
+        axios.get('/auth/user').then((res)=>{
+            dispatch(loginUser(res.data))
+            setIsLoggedIn(true)
+        })
+    },[])
+
+    useEffect(()=>{
+        if(props.user.username) setMessage("Welcome " + props.user.username)
+    },[props.user.username])
 
     const handleLogin = () => {
         setMessage("")

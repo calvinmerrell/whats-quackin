@@ -83,6 +83,16 @@
             }
           }
     }
+    .add-product-form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: blue;
+    }
+    .form-label{
+      background-color: blueviolet;
+    }
     
     .login-container{
         position: absolute;

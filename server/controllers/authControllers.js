@@ -28,7 +28,10 @@ module.exports = {
 
       //create a session for the new user which logs them in
       req.session.user =  newUser
-
+      req.session.cart = {
+        cart: [],
+        total: 0,
+      }
       // send a response with the session object so the front end can use the info as needed
       res.status(200).send(newUser)
 
@@ -55,6 +58,10 @@ module.exports = {
 
       // Attach the user to the session
       req.session.user = existingUser
+      req.session.cart = {
+        cart: [],
+        total: 0,
+      }
       console.log(req.session.user)
       // Send back confirmation of login
       res.status(200).send(existingUser)

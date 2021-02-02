@@ -1,12 +1,13 @@
 import { Form, Button } from "react-bootstrap"
+import './style.css'
 
 const AddProducts = (props) => {
     return (
         <div>
-            <Form>
+            <Form className="add-product-form">
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Example select</Form.Label>
-                    <Form.Control as="select">
+                    <Form.Label></Form.Label>
+                    <Form.Control placeholder="Call Type" as="select" >
                         <option>Duck Call</option>
                         <option>Goose Call</option>
                         <option>Call Blanks</option>
@@ -14,12 +15,12 @@ const AddProducts = (props) => {
                 </Form.Group>
 
                 <Form.Group controlId="productName">
-                    <Form.Label>Product Name</Form.Label>
+                    <Form.Label>Product Name </Form.Label>
                     <Form.Control type="productName" placeholder="Call Name" />
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Example select</Form.Label>
+                    <Form.Label>Call Style </Form.Label>
                     <Form.Control as="select">
                         <option>Single Reed</option>
                         <option>Double Reed</option>
@@ -29,7 +30,7 @@ const AddProducts = (props) => {
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Example select</Form.Label>
+                    <Form.Label>Type of Wood </Form.Label>
                     <Form.Control as="select">
                         <option>Black Oak</option>
                         <option>Osage Orange</option>
