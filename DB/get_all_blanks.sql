@@ -1,0 +1,1 @@
+Select * FROM products WHERE product_type = 'CallBlanks' ORDER BY product_name ASC

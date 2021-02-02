@@ -37,4 +37,8 @@
 --     phone text
 --     )
 
+-- INSERT INTO products (product_type,product_name,call_style,wood_type,price)
+-- VALUES ('Goose_call','Maple Goose Call','short reed', 'Maple', 150)
 
+-- INSERT INTO products (product_type,product_name,wood_type,price)
+-- VALUES ('Call_Blank','Paduk Blank', 'Paduk', 10)

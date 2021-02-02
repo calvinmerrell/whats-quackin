@@ -2,7 +2,11 @@ import {createStore, combineReducers, applyMiddleware} from "redux"
 import promiseMiddleware from 'redux-promise-middleware'
 import userReducer from './userReducer'
 import cartReducer from './cartReducer'
-import {devToolsEnhancer} from 'redux-devtools-extension'
+import {composeWithDevTools} from 'redux-devtools-extension'
+
+
+const composeEnhancers = composeWithDevTools({
+  });
 
 const rootReducer = combineReducers({
     user: userReducer,
@@ -10,4 +14,4 @@ const rootReducer = combineReducers({
 })
 
 
-export default createStore(rootReducer,applyMiddleware(promiseMiddleware)(devToolsEnhancer()))
+export default createStore(rootReducer,composeEnhancers(applyMiddleware(promiseMiddleware)))

@@ -1,0 +1,1 @@
+Select * FROM products WHERE product_type = 'GooseCall' ORDER BY product_name ASC

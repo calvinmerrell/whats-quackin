@@ -118,7 +118,7 @@ const Header = (props) => {
     )
 }
 function mapStateToProps(reduxState) {
-    return redux.user
+    return reduxState
 }
 
 export default connect(mapStateToProps)(withRouter(Header))
