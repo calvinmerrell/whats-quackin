@@ -1,1 +1,1 @@
-Select * FROM products WHERE product_type = 'DuckCall' ORDER BY product_name ASC
+Select * FROM products WHERE product_type = 'duck_call' ORDER BY product_name ASC

@@ -1,1 +1,1 @@
-Select * FROM products WHERE product_type = 'CallBlanks' ORDER BY product_name ASC
+Select * FROM products WHERE product_type = 'Call_Blank' ORDER BY product_name ASC
