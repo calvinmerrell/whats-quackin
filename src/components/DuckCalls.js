@@ -7,7 +7,7 @@ const DuckCalls = (props) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get('/api/products/:product_type').then((res) => {
+        axios.get('/api/DuckCalls').then((res) => {
             setProducts(res.data)
         })
     }, []);

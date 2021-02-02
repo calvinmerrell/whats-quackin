@@ -7,7 +7,7 @@ const Products = (props) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get('/api/products').then((res) => {
+        axios.get('/api/CallBlanks').then((res) => {
             setProducts(res.data)
         })
     }, []);
@@ -16,7 +16,12 @@ const Products = (props) => {
         <div>
             {products.map((product) => (
                 <Link className="product-link" to={`/products/${products.product_id}`}>
-                    <p>{products.product_name}{products.call_style}{products.wood_type}{products.price}</p>
+                    <p>
+                        {products.product_name}
+                        {products.wood_type}
+                        {products.price}
+                        {products.quantity}
+                    </p>
                 </Link>
             ))}
             <p> Call Blanks here </p>

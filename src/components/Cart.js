@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
-// import { Link } from 'react-router-dom'
-import './style.css'
+// import React, { useState, useEffect } from 'react'
+// // import axios from 'axios'
+// // import { Link } from 'react-router-dom'
+// import './style.css'
 
 
 
-const Cart = (props) => {
-    return (
-        <div>
-            <p className="product-section">Shopping CART form</p>
+// const Cart = (props) => {
+//     return (
+//         <div>
+//             <p className="product-section">Shopping CART form</p>
             
-        </div>
-    )
-}
+//         </div>
+//     )
+// }
  
-export default Cart;
+// export default Cart;
