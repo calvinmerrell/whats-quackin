@@ -15,16 +15,13 @@ const Products = (props) => {
     return (
         <div>
             {products.map((product) => (
-                <Link className="product-link" to={`/products/${products.product_id}`}>
-                    <p>
-                        {products.product_name}
-                        {products.wood_type}
-                        {products.price}
-                        {products.quantity}
-                    </p>
+                <Link className="product-link" to={`/products/${product.product_id}`}>
+                    <p>{product.wood_type}</p>
+                    <p>{product.price}</p>
+                    <p>{product.quantity}</p>
                 </Link>
             ))}
-            <p> Call Blanks here </p>
+            
         </div>
     )
 }

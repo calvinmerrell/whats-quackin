@@ -7,7 +7,7 @@ const Products = (props) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get('/api/products').then((res) => {
+        axios.get('/api/GooseCalls').then((res) => {
             setProducts(res.data)
         })
     }, []);
@@ -15,12 +15,12 @@ const Products = (props) => {
     return (
         <div>
             {products.map((product) => (
-                <Link className="product-link" to={`/products/${products.product_id}`}>
-                    <p>{products.product_name}{products.call_style}{products.wood_type}{products.price}</p>
+                <Link className="product-link" to={`/products/${product.product_id}`}>
+                    <p>{product.product_name}{product.call_style}{product.wood_type}{product.price}</p>
                 </Link>
             ))}
 
-            <p> Goose Call here </p>
+            
         </div>
     )
 }
