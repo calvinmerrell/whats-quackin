@@ -21,7 +21,7 @@ export default function reducer(state = initialState,action){
     switch(action.type){
         case GET_ALL_PRODUCTS + '_PENDING':
             return{...state,isLoading:true}
-        case GET_ALL_PRODUCTS = '_FULFILLED':
+        case GET_ALL_PRODUCTS + '_FULFILLED':
             return {...state,isLoading:false,products: action.payload.data}
         case GET_ALL_PRODUCTS + '_REJECTED':
             return {...state,isLoading:false}
