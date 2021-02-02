@@ -32,7 +32,7 @@ app.get('/auth/user', authctrl.getUserSession);
 app.delete('/auth/logout', authctrl.logout);
 //EndPoints
 
-app.get('/api/products', productController.getAllProducts);
+app.get('/api/Products', productController.getAllProducts);
 app.get('/api/DuckCalls', duckController.getAllDuckCalls);
 app.get('/api/GooseCalls', gooseController.getAllGooseCalls);
 app.get('/api/CallBlanks', blanksController.getAllBlanks);

@@ -15,7 +15,7 @@ const DuckCalls = (props) => {
     return (
         <div>
             {products.map((product) => (
-                <Link className="product-link" to={`/products/${products.product_id}`}>
+                <Link className="product-link" to={`/DuckCalls/${products.product_id}`}>
                     <p>{products.product_name}{products.call_style}{products.wood_type}{products.price}</p>
                 </Link>
             ))}
