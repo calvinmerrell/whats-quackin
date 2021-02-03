@@ -20,7 +20,8 @@
 --     call_style VARCHAR(30),
 --     wood_type VARCHAR(30),
 --     price integer,
---     image bytea
+--     image bytea,
+--     quantity integer
 --     )
 
 -- CREATE TABLE orders (

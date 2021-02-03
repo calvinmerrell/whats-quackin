@@ -33,9 +33,13 @@ app.delete('/auth/logout', authctrl.logout);
 //EndPoints
 
 app.get('/api/Products', productController.getAllProducts);
+app.get('/api/Products', productController.editProduct);
+app.get('/api/Products'), productController.deleteProduct);
 app.get('/api/DuckCalls', duckController.getAllDuckCalls);
 app.get('/api/GooseCalls', gooseController.getAllGooseCalls);
 app.get('/api/CallBlanks', blanksController.getAllBlanks);
+
+app.post('/api/cart', cartController.addToCart)
 
 // connect our server to our db
 massive({

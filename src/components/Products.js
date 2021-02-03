@@ -15,12 +15,14 @@ const Products = (props) => {
         })
     }, []);
 
+    useEffect(() => {
+        getProduct()
+    }, [getProduct])
+
     return (
         <div className="product-list">
             {products.map((product) => (
-                <Link className="product-link" to={`/products/${product.product_id}`}>
-                    <p>{product.product_name}{product.call_style}{product.wood_type}{product.price}</p>
-                </Link>
+                <Product getProduct={getProduct} key={product.product_id} data={product}/>
             ))}
         </div>
     )

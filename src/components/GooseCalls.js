@@ -19,8 +19,8 @@ const Products = (props) => {
                     <p>{product.product_name}{product.call_style}{product.wood_type}{product.price}</p>
                 </Link>
             ))}
-
             
+            <button>Add to Cart</button>
         </div>
     )
 }

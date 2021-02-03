@@ -21,7 +21,7 @@ const Products = (props) => {
                     <p>{product.quantity}</p>
                 </Link>
             ))}
-            
+            <button>Add to Cart</button>
         </div>
     )
 }
