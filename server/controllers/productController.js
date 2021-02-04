@@ -11,7 +11,7 @@ module.exports = {
       const db = rew.app.get('db')
       const { product_type, call_style, wood_type, price, quantity, image} = req.body
 
-      db.add_product ([+product_type, +call_style, +wood_type, +price, +quantity, +image]).then((products)=>{
+      db.add_product ([product_type, product_name, call_style, wood_type, +price, +quantity, image]).then((products)=>{
         res.sendStatus(200)
       })
       .catch(err => {

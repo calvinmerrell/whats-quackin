@@ -1,18 +1,30 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Form, Button } from "react-bootstrap"
-import './style.css'
+// import './style.css'
 
 const AddProducts = (props) => {
-    const { product_id, product_type, call_style, wood_type, price, quantity } = body
     const [message, setMessage] = useState('')
+    const [product_type, setProductType] = useState('')
+    const [product_name, setProductName] = useState('')
+    const [call_style, setCallStyle] = useState('')
+    const [wood_type, setWoorType] = useState('')
+    const [price, setPrice] = useState('')
+    const [quantity, setQuantity] = useState('')
+    const [image, setImage] = useState('')
 
-    axios.post('/auth/products', body).then(
-        (res) => {
-            setMessage(product_type + " has been added")
-            setIsLoggedIn(true)
+
+    function handleAddProduct() {
+        let newProduct = { product_type, product_name, call_style, wood_type, price, quantity, image }
+        axios.post(`/api/Products`, newProduct)
+            .then((res) => {
+            setMessage(product_type + " added")
+            setTimeout(() => {
+                setMessage('')
+            }, 2000)
         })
-       
+    }
+
     return (
         <div>
             <Form className="add-product-form">
@@ -59,14 +71,19 @@ const AddProducts = (props) => {
                     <Form.Control type="productPrice" placeholder="Price" />
                 </Form.Group>
 
+                <Form.Group controlId="Quantity">
+                    <Form.Label>Quantity</Form.Label>
+                    <Form.Control type="Quantity" placeholder="Quantity" />
+                </Form.Group>
+
                 <Form.Group>
                     <Form.File id="ImageSelector" label="Select Image" />
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit">
-                    Add Product
+                <Button variant="primary" type="submit" className="ctrlbuttons" onClick={() => handleAddProduct()}>  Add Product
                 </Button>
+                
             </Form>
         </div >
     )
