@@ -22,12 +22,12 @@ module.exports = {
       })
     },
 
-    deleteRound: (req, res) => {
+    deleteProduct: (req, res) => {
       const db = req.app.get('db')
       const { product_id } = req.params
   
-      db.delete_round([+product_id]).then(() => {
-        res.sendstatus(200)
+      db.delete_product([+product_id]).then(() => {
+        res.sendStatus(200)
       })
         .catch(err => {
           res.status(400).send(err)

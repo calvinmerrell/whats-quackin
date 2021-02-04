@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './cart.css'
+// import './cart.css'
 
 class Cart extends Component {
   render() {

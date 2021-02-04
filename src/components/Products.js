@@ -3,26 +3,28 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getAllProducts} from '../Redux/productReducer'
+import Product from './Product'
 import './style.css'
 
 const Products = (props) => {
     const [products, setProducts] = useState([])
+    
 
     useEffect(() => {
-        axios.get('/api/products').then((res) => {
-            setProducts(res.data)
-            console.log(res)
-        })
+        getProducts()
     }, []);
 
-    useEffect(() => {
-        getProduct()
-    }, [getProduct])
+function getProducts(){
+    axios.get('/api/products').then((res) => {
+        setProducts(res.data)
+        console.log(res)
+    })
+}
 
     return (
         <div className="product-list">
             {products.map((product) => (
-                <Product getProduct={getProduct} key={product.product_id} data={product}/>
+                <Product getProducts={getProducts} key={products.product_id} data={product}/>
             ))}
         </div>
     )

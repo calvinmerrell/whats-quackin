@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
+import { connect } from 'react-redux'
 import './style.css'
 
 const Product = (props) => {
-    const {product_id, product_type, call_style, wood_type, price,quantity} = props.data
+    const { product_id, product_type, call_style, wood_type, price, quantity } = props.data
     const [inputText, SetInputText] = useState('')
     const [showEdit, SetShowEdit] = useState(false)
 
@@ -18,17 +19,13 @@ const Product = (props) => {
 
     function handleDelete() {
         axios.delete(`/api/Products/${product_id}`)
-        .then((res) => {props.getProduct()
-            }
-        )
+            .then((res) => {
+                props.getProducts()
+            })
     }
-
 
     return (
         <div className="product row">
-            
-            <div className="col-2">
-                {moment(date).format("DD/MM/YYYY")} </div>
 
             <div className="col-3">{product_type}</div>
             <div className="col-2">{call_style}</div>
@@ -41,12 +38,25 @@ const Product = (props) => {
                     <button onClick={handleSave}>Save</button></p>) : null
             }
 
-            <Button variant="primary" className="ctrlbuttons" onClick={() => SetShowEdit(true)}> Edit </Button>
+            {
+                props.user.is_admin ? (
+                    <div>
+                        <Button variant="primary" className="ctrlbuttons" onClick={() => SetShowEdit(true)}> Edit </Button>
 
-            <Button variant="primary" className="ctrlbuttons" onClick={() => handleDelete()}>Remove </Button>
+                        <Button variant="primary" className="ctrlbuttons" onClick={() => handleDelete()}>Remove </Button>
+
+                    </div>
+                ) : null
+            }
+
+
 
         </div>
     )
 }
 
-export default Product
+function mapStateToProps(reduxState) {
+    return reduxState.user
+}
+
+export default connect(mapStateToProps)(Product)

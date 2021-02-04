@@ -7,6 +7,7 @@ const productController = require ('./controllers/productController')
 const duckController = require ('./controllers/duckController')
 const gooseController = require ('./controllers/gooseController')
 const blanksController = require ('./controllers/blanksController')
+const cartController = require ('./controllers/cartController')
 // const authenticateUsrser = require('./middlewares/authenticateUser')
 
 const {SERVER_PORT, DATA_STRING, SESSION_SECRET} = process.env
@@ -33,8 +34,8 @@ app.delete('/auth/logout', authctrl.logout);
 //EndPoints
 
 app.get('/api/Products', productController.getAllProducts);
-app.get('/api/Products', productController.editProduct);
-app.get('/api/Products'), productController.deleteProduct);
+app.put('/api/Products/:product_id', productController.editProduct);
+app.delete('/api/Products/:product_id', productController.deleteProduct);
 app.get('/api/DuckCalls', duckController.getAllDuckCalls);
 app.get('/api/GooseCalls', gooseController.getAllGooseCalls);
 app.get('/api/CallBlanks', blanksController.getAllBlanks);
