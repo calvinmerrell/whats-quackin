@@ -1,7 +1,18 @@
+import React, { useState } from 'react'
+import axios from 'axios'
 import { Form, Button } from "react-bootstrap"
 import './style.css'
 
 const AddProducts = (props) => {
+    const { product_id, product_type, call_style, wood_type, price, quantity } = body
+    const [message, setMessage] = useState('')
+
+    axios.post('/auth/products', body).then(
+        (res) => {
+            setMessage(product_type + " has been added")
+            setIsLoggedIn(true)
+        })
+       
     return (
         <div>
             <Form className="add-product-form">

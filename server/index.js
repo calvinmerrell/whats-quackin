@@ -40,6 +40,8 @@ app.get('/api/DuckCalls', duckController.getAllDuckCalls);
 app.get('/api/GooseCalls', gooseController.getAllGooseCalls);
 app.get('/api/CallBlanks', blanksController.getAllBlanks);
 
+app.post('/api/AddProduct', productController.addProduct)
+
 app.post('/api/cart', cartController.addToCart)
 
 // connect our server to our db
