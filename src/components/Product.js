@@ -43,11 +43,13 @@ const Product = (props) => {
 
             {props.user.is_admin ? (
                 <div>
-                    <Button variant="primary" className="shop-button" onClick={() => SetShowEdit(true)}> Edit </Button>
+                    <Button variant="primary" className="auth-button" onClick={() => SetShowEdit(true)}> Edit </Button>
 
-                    <Button variant="primary" className="shop-button" onClick={() => handleDelete()}>Remove </Button>
+                    <Button variant="primary" className="auth-button" onClick={() => handleDelete()}>Remove </Button>
                 </div>) : null}
-                <button>Add to Cart</button>
+                {!props.user.is_admin ? (
+                <button>Add to Cart</button>)
+                : null}
         </div>
     )
 }

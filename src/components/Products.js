@@ -20,7 +20,7 @@ const Products = (props) => {
     }, []);
 
     return (
-        <div className="product-list">
+        <div className="products-container">
             {products.map((product) => (
                 <Product getProducts={getProducts} key={product.product_id} data={product}/>
             ))}

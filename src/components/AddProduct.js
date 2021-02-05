@@ -27,6 +27,9 @@ const AddProducts = (props) => {
 
     return (
         <div className="products-container">
+            <p>
+                {message}
+            </p>
             <Form className="add-product-form">
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label></Form.Label>
@@ -81,7 +84,7 @@ const AddProducts = (props) => {
 
                 <Form.Group controlId="Image" onChange={(e) => setImage(e.target.value)} value={image}>
                     <Form.Label></Form.Label>
-                    <Form.Control  size="lg" placeholder="Image"/>
+                    <Form.Control  size="lg" placeholder="Image URL"/>
                 </Form.Group>
 
                 
@@ -91,9 +94,7 @@ const AddProducts = (props) => {
                 </Button>
                 
             </Form>
-        <p>
-        {message}
-        </p>
+        
         </div >
         
     )
