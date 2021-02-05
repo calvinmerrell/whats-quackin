@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import './style.css'
 
 const Product = (props) => {
-    const { product_id, product_type, call_style, wood_type, price, quantity, image } = props.data
+    const { product_id, product_type, call_style, wood_type, price, quantity} = props.data
     const [inputText, SetInputText] = useState('')
     const [showEdit, SetShowEdit] = useState(false)
 
@@ -32,7 +32,7 @@ const Product = (props) => {
             <div className="col-2">{wood_type}</div>
             <div className="col-2">{price}</div>
             <div className="col-2">{quantity}</div>
-            <div className="col-2">{image}</div>
+            {/* <div className="col-2">{image}</div> */}
 
 
             { showEdit ? (

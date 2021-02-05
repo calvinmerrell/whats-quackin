@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {getAllProducts} from '../Redux/productReducer'
+// import {getAllProducts} from '../Redux/productReducer'
 import Product from './Product'
 import './style.css'
 
@@ -10,18 +10,19 @@ const Products = (props) => {
     
     function getProducts(){
         axios.get('/api/products').then((res) => {
+            console.log(res.data)
             setProducts(res.data)
         })
     }   
     
     useEffect(() => {
         getProducts()
-    }, [getProducts]);
+    }, []);
 
     return (
         <div className="product-list">
             {products.map((product) => (
-                <Product getProducts={getProducts} key={products.product_id} data={product}/>
+                <Product getProducts={getProducts} key={product.product_id} data={product}/>
             ))}
         </div>
     )
@@ -31,4 +32,4 @@ function mapStateToProps(reduxState){
     return reduxState.products
 }
 
-export default connect(mapStateToProps,{getAllProducts})(Products)
+export default connect(mapStateToProps)(Products)
