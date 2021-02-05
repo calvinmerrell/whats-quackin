@@ -69,8 +69,8 @@ header > h1 {
   
 }
 .login-inputs{
-  font-size: 3vh;
-  width: 15vw;
+  font-size: 15px;
+  width: 10vw;
 }
 .auth-button{
   border-radius: 10px;

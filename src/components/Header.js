@@ -18,16 +18,16 @@ const Header = (props) => {
     const [message, setMessage] = useState('')
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    useEffect(()=>{
-        axios.get('/auth/user').then((res)=>{
+    useEffect(() => {
+        axios.get('/auth/user').then((res) => {
             dispatch(loginUser(res.data))
             setIsLoggedIn(true)
         })
-    },[dispatch])
+    }, [dispatch])
 
-    useEffect(()=>{
-        if(props.user.username) setMessage("~ " + props.user.username + " ~")
-    },[props.user.username])
+    useEffect(() => {
+        if (props.user.username) setMessage("~ " + props.user.username + " ~")
+    }, [props.user.username])
 
     const handleLogin = () => {
         setMessage("")
@@ -67,9 +67,9 @@ const Header = (props) => {
     return (
         <header className="App-header">
             <h1 className="header-title">What's Quackin</h1>
-                    <p className="message">
-                        {message}
-                    </p>
+            <p className="message">
+                {message}
+            </p>
             <nav className="nav-list">
                 <ul className="header-links">
                     <Link className="component-link" to='/'>
@@ -97,8 +97,8 @@ const Header = (props) => {
                     </Link>
 
                     <Link to='/cart'>
-                        <img className="cart-icon" 
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ138X6fIgCeQhf8ABwojifKMYFCC13rDT7qg&usqp=CAU"></img>
+                        <img className="cart-icon"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ138X6fIgCeQhf8ABwojifKMYFCC13rDT7qg&usqp=CAU"></img>
                     </Link>
                 </ul>
                 <div className="login-container">
