@@ -26,7 +26,7 @@ const Header = (props) => {
     },[dispatch])
 
     useEffect(()=>{
-        if(props.user.username) setMessage("Welcome " + props.user.username)
+        if(props.user.username) setMessage("~ " + props.user.username + " ~")
     },[props.user.username])
 
     const handleLogin = () => {
