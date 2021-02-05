@@ -13,15 +13,17 @@ const Products = (props) => {
     }, []);
 
     return (
-        <div>
+        <div className="products-container">
+             <h1 classname="page-header">Available Call Blanks</h1>
             {products.map((product) => (
-                <Link className="product-link" to={`/products/${product.product_id}`}>
-                    <p>{product.wood_type}</p>
-                    <p>{product.price}</p>
-                    <p>{product.quantity}</p>
-                </Link>
+                <div className="product-link" to={`/products/${product.product_id}`}>
+                    <p className="product-details">{product.wood_type} wood</p>
+                    <p className="product-details">${product.price} per blank</p>
+                    <p className="product-details">Quantity: {product.quantity}</p>
+                    <button className="shop-button">Add to Cart</button>
+                </div>
             ))}
-            <button>Add to Cart</button>
+            
         </div>
     )
 }

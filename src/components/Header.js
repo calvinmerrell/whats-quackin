@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 import { loginUser } from '..//Redux/userReducer'
 import { connect } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-// import './Header.scss'
+import './style.css'
 
 const Header = (props) => {
 
@@ -42,7 +42,7 @@ const Header = (props) => {
                 console.log(res.data)
                 setUsername("")
                 setPassword("")
-                setMessage("Welcome " + username)
+                setMessage(username)
                 setIsLoggedIn(true)
             })
             .catch(() => {
@@ -56,7 +56,7 @@ const Header = (props) => {
     const handleLogout = () => {
         axios.delete('/auth/logout').then(
             (res) => {
-                setMessage("Good Bye")
+                setMessage("Happy Hunting" + username)
                 setIsLoggedIn(false)
                 setTimeout(() => {
                     setMessage('')
@@ -68,33 +68,36 @@ const Header = (props) => {
     return (
         <header className="App-header">
             <h1 className="header-title">What's Quackin</h1>
+                    <p className="message">
+                        {message}
+                    </p>
             <nav className="nav-list">
-                <ul className="menu-items">
-                    <Link className="App-link" to='/'>
+                <ul className="header-links">
+                    <Link className="component-link" to='/'>
                         <li>Home</li>
                     </Link>
 
-                    {props.user.is_admin ? (<Link className="App-link" to='/Products'>
+                    {props.user.is_admin ? (<Link className="component-link" to='/Products'>
                         <li>Products</li>
                     </Link>) : null}
 
-                    {props.user.is_admin ? (<Link className="App-link" to='/AddProduct'>
+                    {props.user.is_admin ? (<Link className="component-link" to='/AddProduct'>
                         <li>Add Product</li>
                     </Link>) : null}
 
-                    <Link className="App-link" to='/DuckCalls'>
+                    <Link className="component-link" to='/DuckCalls'>
                         <li>Duck Calls</li>
                     </Link>
 
-                    <Link className="App-link" to='/GooseCalls'>
+                    <Link className="component-link" to='/GooseCalls'>
                         <li>Goose Calls</li>
                     </Link>
 
-                    <Link className="App-link" to='/CallBlanks'>
+                    <Link className="component-link" to='/CallBlanks'>
                         <li>Call Blanks</li>
                     </Link>
 
-                    <Link className="App-link" to='/cart'>
+                    <Link className="component-link" to='/cart'>
                         <img className="cart-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9e5mt0II_7vLT5K4uqWufdqAWhzT-188h2g&usqp=CAU" alt="Shopping Cart Icon"></img>
                     </Link>
                 </ul>
@@ -108,16 +111,13 @@ const Header = (props) => {
                             <input required value={password} className="login-inputs" placeholder="password" onChange={(e) => setPassword(e.target.value)}></input>
                         </>}
 
-                    <p>
-                        {message}
-                    </p>
 
                     {!isLoggedIn && <Button variant="primary" onClick={handleLogin}>Log in</Button>
                     }
 
                     {isLoggedIn && <Button variant="primary" onClick={handleLogout}>Log out</Button>}
 
-                    {!isLoggedIn && <Link className="App-link" to='/register'>
+                    {!isLoggedIn && <Link className="component-link" to='/register'>
                         <p>Register</p>
                     </Link>}
                 </div>

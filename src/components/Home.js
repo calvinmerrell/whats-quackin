@@ -6,27 +6,24 @@ import './style.css'
 
 const Home = (props) => {
     return (
-        <div>
-            <p className="product_section" id="duckCalls">
-                SECTION for Duck Calls
-                <Link className="App-link" to='/DuckCalls'>
-                <button className="shop-button">Shop Duck Calls</button>
-                </Link>
-            </p>
+        <div className="home-body">
+            <Link to='/DuckCalls'>
+                <div className="duck_section" id="duckCalls">
+                    <p className="shop-button">Shop Duck Calls</p>
+                </div>
+            </Link>
 
-            <p className="product_section" id="gooseCalls">
-                SECTION for Goose Calls
-                <Link className="App-link" to='/GooseCalls'>
-                <button className="shop-button">Shop Goose Calls</button>
-                </Link>
-            </p>
+            <Link to='/GooseCalls'>
+                <div className="goose_section" id="gooseCalls">
+                    <p className="shop-button">Shop Goose Calls</p>
+                </div>
+            </Link>
 
-            <p className="product_section" id="callBlanks">
-                SECTION for Call Blanks
-                <Link className="App-link" to='/CallBlanks'>
-                    <button className="shop-button">Shop Call Blanks</button>
-                </Link>
-            </p>
+            <Link to='/CallBlanks'>
+                <div className="blanks_section" id="callBlanks">
+                    <p className="shop-button">Shop Call Blanks</p>
+                </div>
+            </Link>
         </div>
 
     )

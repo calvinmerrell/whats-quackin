@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getAllProducts} from '../Redux/productReducer'
 import Product from './Product'
