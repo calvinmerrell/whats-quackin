@@ -23,7 +23,7 @@ const Header = (props) => {
             dispatch(loginUser(res.data))
             setIsLoggedIn(true)
         })
-    },[])
+    },[dispatch])
 
     useEffect(()=>{
         if(props.user.username) setMessage("Welcome " + props.user.username)
@@ -39,10 +39,9 @@ const Header = (props) => {
             (res) => {
                 dispatch(loginUser(res.data))
                 history.push('/')
-                console.log(res.data)
                 setUsername("")
                 setPassword("")
-                setMessage(username)
+                setMessage("~" + username + "~")
                 setIsLoggedIn(true)
             })
             .catch(() => {
@@ -97,8 +96,9 @@ const Header = (props) => {
                         <li>Call Blanks</li>
                     </Link>
 
-                    <Link className="component-link" to='/cart'>
-                        <img className="cart-icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9e5mt0II_7vLT5K4uqWufdqAWhzT-188h2g&usqp=CAU" alt="Shopping Cart Icon"></img>
+                    <Link to='/cart'>
+                        <img className="cart-icon" 
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ138X6fIgCeQhf8ABwojifKMYFCC13rDT7qg&usqp=CAU"></img>
                     </Link>
                 </ul>
                 <div className="login-container">
@@ -108,14 +108,14 @@ const Header = (props) => {
                             <input required value={username} className="login-inputs" placeholder="username" onChange={(e) => setUsername(e.target.value)}></input>
 
 
-                            <input required value={password} className="login-inputs" placeholder="password" onChange={(e) => setPassword(e.target.value)}></input>
+                            <input required type="password" value={password} className="login-inputs" placeholder="password" onChange={(e) => setPassword(e.target.value)}></input>
                         </>}
 
 
-                    {!isLoggedIn && <Button variant="primary" onClick={handleLogin}>Log in</Button>
+                    {!isLoggedIn && <Button variant="primary" className="auth-button" onClick={handleLogin}>Log in</Button>
                     }
 
-                    {isLoggedIn && <Button variant="primary" onClick={handleLogout}>Log out</Button>}
+                    {isLoggedIn && <Button variant="primary" className="auth-button" onClick={handleLogout}>Log out</Button>}
 
                     {!isLoggedIn && <Link className="component-link" to='/register'>
                         <p>Register</p>

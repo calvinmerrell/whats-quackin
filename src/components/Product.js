@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { connect } from 'react-redux'
 import './style.css'
@@ -44,9 +43,9 @@ const Product = (props) => {
 
             {props.user.is_admin ? (
                 <div>
-                    <Button variant="primary" className="ctrlbuttons" onClick={() => SetShowEdit(true)}> Edit </Button>
+                    <Button variant="primary" className="shop-button" onClick={() => SetShowEdit(true)}> Edit </Button>
 
-                    <Button variant="primary" className="ctrlbuttons" onClick={() => handleDelete()}>Remove </Button>
+                    <Button variant="primary" className="shop-button" onClick={() => handleDelete()}>Remove </Button>
                 </div>) : null}
                 <button>Add to Cart</button>
         </div>

@@ -6,6 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      {/* <img src="" id="bg" alt=""></img> */}
       <Header />
       {routes}
     </div>

@@ -3,8 +3,21 @@
   margin: 0;
   padding: 0;
 }
-.app{
- background-color: teal;
+#bg{
+  position: fixed; 
+  width: 250px; 
+  height: 250px;
+  z-index: -1;
+}
+#bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
 }
 .home-body{
   display: flex;
@@ -16,43 +29,75 @@ header > h1 {
   margin-bottom: 10px;
   color: rgb(216, 181, 23);
 }
-.login-inputs{
-  font-size: 14px;
-  width: 15vw;
-}
 
 .nav-list > ul {
   display: flex;
   list-style-type: none;
   width: 100%;
   justify-content: space-evenly;
+  font-weight: 900;
+  
 }
 .nav-list {
   width: 50%;
+  
+  
   
   ul {
     display: flex;
     list-style-type: none;
     width: 100%;
+    
+    
     justify-content: space-evenly;
     
     li {
       padding: 5px 10px;
+      border: solid black 2px;
     }
   }
 }
-.login-contain{
-  background-color: aquamarine;
+.login-container{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  right:0;
+  top: 0;
+  margin-top: 20px;
+  margin-right:250px;
+  
+}
+.login-inputs{
+  font-size: 3vh;
+  width: 15vw;
+}
+.auth-button{
+  border-radius: 10px;
+  color: rgb(5, 5, 5);
+  padding: 7px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 .component-link{
-  font-weight: 40;
+  display:flex;
+  justify-content: center;
+  width: 20%;
+  height: 4vh;
+  align-items: center;
+  font-weight: 900;
   color: rgb(37, 141, 42);
   text-decoration: none;
+  
+  margin: 7px;
 }
 
 .cart-icon{
   width: 5vw;
-  height: 5vh;
+  height: 7vh;
 }
 
 .register-container{
@@ -60,10 +105,17 @@ header > h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20vw;
+  width: 40vw;
   height: 40vh;
-  background-color: rgb(161, 141, 114);
+  font-size: 16px;
+  background-color: rgb(201, 146, 75);
   border: solid black 2px;
+  margin-top: 5vh;
+  margin-left: 30vw;
+}
+.registration-inputs{
+  margin:4px;
+  font-size: 20px;
 }
 
 .duck_section {
@@ -76,7 +128,6 @@ header > h1 {
   border: solid 2px black;
   margin: 20px;
   border-radius: 12px;
-  background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fe8%2Fc4%2Fef%2Fe8c4efdc1a9981a7a8e1458d7945c480.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F463307880398139949%2F&tbnid=R34lussC-QxRyM&vet=12ahUKEwjR2ouTgdLuAhWHE80KHaEUD-YQMyglegUIARD5AQ..i&docid=FtNr5ISe5yofgM&w=800&h=526&q=mallard%20hunting&ved=2ahUKEwjR2ouTgdLuAhWHE80KHaEUD-YQMyglegUIARD5AQ)
 }
 .goose_section {
   display: flex;
@@ -98,6 +149,7 @@ header > h1 {
   border: solid 2px black;
   margin: 20px;
   border-radius: 12px;
+  
 }
 .App-header {
   flex-direction: column;
@@ -109,23 +161,24 @@ header > h1 {
   display: flex;
   position: relative
 }
-  
     
 .add-product-form{
+  width:fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  background-color: blue;
+  margin-top: 20px;
 }
 .shop-button{
   border-radius: 12px;
-  color: rgb(240, 226, 37);
+  color: rgb(5, 5, 5);
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight: 900;
   margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -159,7 +212,9 @@ header > h1 {
 }
 .message{
   font-size: larger;
-  font-weight:100;
+  font-weight:900;
   font-style: oblique;
+  position: relative;
+  margin-bottom: 15px;
 }
   

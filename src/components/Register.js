@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import {withRouter} from 'react-router-dom'
-import {useHistory} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button'
 import './style.css'
@@ -41,36 +41,28 @@ const Register = (props) => {
     return (
         <div className="register-container">
             <p>{message}</p>
-            <div className="row">
-                <div className="col">
-                    <input className="registration-inputs" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
-                </div>
+            <div >
+                <input className="registration-inputs" placeholder="Username" onChange={(e) => setUsername(e.target.value)}></input>
             </div>
-            <div className="row">
-                <div className="col">
-                    <input className="registration-inputs" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
-                </div>
+            <div>
+                <input className="registration-inputs" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></input>
+
             </div>
-            <div className="row">
-                <div className="col">
-                    <input className="registration-inputs" placeholder="First Name" onChange={(e) => setFirst_name(e.target.value)}></input>
-                </div>
+            <div>
+                <input className="registration-inputs" placeholder="First Name" onChange={(e) => setFirst_name(e.target.value)}></input>
+
             </div>
-            <div className="row">
-                <div className="col">
-                    <input className="registration-inputs" placeholder="Last Name" onChange={(e) => setLast_name(e.target.value)}></input>
-                </div>
+            <div>
+                <input className="registration-inputs" placeholder="Last Name" onChange={(e) => setLast_name(e.target.value)}></input>
+
             </div>
-            <div className="row">
-                <div className="col">
-                    <input className="registration-inputs" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
-                </div>
+            <div>
+                <input className="registration-inputs" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></input>
             </div>
 
-            <div className="row">
-                <div className="col">
-                    <Button variant="primary" onClick={handleRegister}>Register</Button>
-                </div>
+            <div>
+                <Button className="auth-button" variant="primary" onClick={handleRegister}>Register</Button>
+
             </div>
         </div>
 

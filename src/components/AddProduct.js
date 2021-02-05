@@ -26,11 +26,12 @@ const AddProducts = (props) => {
     }
 
     return (
-        <div>
+        <div className="products-container">
             <Form className="add-product-form">
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label></Form.Label>
-                    <Form.Control placeholder="Call Type" as="select" onChange={(e) => setProductType(e.target.value)} value={product_type}>
+                    <Form.Control size="lg" placeholder="Call Type" as="select" onChange={(e) => setProductType(e.target.value)} value={product_type}>
+                        <option>Select Call Type</option>
                         <option>Duck_Call</option>
                         <option>Goose_Call</option>
                         <option>Call_Blank</option>
@@ -38,13 +39,14 @@ const AddProducts = (props) => {
                 </Form.Group>
 
                 <Form.Group controlId="productName">
-                    <Form.Label>Product Name </Form.Label>
-                    <Form.Control type="productName" placeholder="Call Name" onChange={(e) => setProductName(e.target.value)} value={product_name}/>
+                    <Form.Label></Form.Label>
+                    <Form.Control size="lg" type="productName" placeholder="Call Name" onChange={(e) => setProductName(e.target.value)} value={product_name}/>
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Call Style </Form.Label>
-                    <Form.Control as="select" onChange={(e) => setCallStyle(e.target.value)} value={call_style}>
+                    <Form.Label></Form.Label>
+                    <Form.Control size="lg" as="select" onChange={(e) => setCallStyle(e.target.value)} value={call_style}>
+                        <option>Select Call Style</option>
                         <option>Single Reed</option>
                         <option>Double Reed</option>
                         <option>Short Reed</option>
@@ -53,8 +55,9 @@ const AddProducts = (props) => {
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Type of Wood </Form.Label>
-                    <Form.Control as="select" onChange={(e) => setWoodType(e.target.value)} value={wood_type}>
+                    <Form.Label></Form.Label>
+                    <Form.Control size="lg" as="select" onChange={(e) => setWoodType(e.target.value)} value={wood_type}>
+                        <option>Select Wood Type</option>
                         <option>Black Oak</option>
                         <option>Osage Orange</option>
                         <option>Paduk</option>
@@ -68,23 +71,23 @@ const AddProducts = (props) => {
 
                 <Form.Group controlId="productPrice" onChange={(e) => setPrice(e.target.value)} value={price}>
                     <Form.Label></Form.Label>
-                    <Form.Control type="productPrice" placeholder="Price" />
+                    <Form.Control size="lg" type="productPrice" placeholder="Price" />
                 </Form.Group>
 
                 <Form.Group controlId="Quantity" onChange={(e) => setQuantity(e.target.value)} value={quantity}>
                     <Form.Label></Form.Label>
-                    <Form.Control type="Quantity" placeholder="Quantity" />
+                    <Form.Control size="lg" type="Quantity" placeholder="Quantity" />
                 </Form.Group>
 
                 <Form.Group controlId="Image" onChange={(e) => setImage(e.target.value)} value={image}>
                     <Form.Label></Form.Label>
-                    <Form.Control   placeholder="Image"/>
+                    <Form.Control  size="lg" placeholder="Image"/>
                 </Form.Group>
 
                 
 
                 
-                <Button variant="primary" type="submit" className="ctrlbuttons" onClick={() => handleAddProduct()}>  Add Product
+                <Button variant="primary" type="submit" className="shop-button" onClick={() => handleAddProduct()}>  Add Product
                 </Button>
                 
             </Form>

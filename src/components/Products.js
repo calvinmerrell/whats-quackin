@@ -8,17 +8,15 @@ import './style.css'
 const Products = (props) => {
     const [products, setProducts] = useState([])
     
-
+    function getProducts(){
+        axios.get('/api/products').then((res) => {
+            setProducts(res.data)
+        })
+    }   
+    
     useEffect(() => {
         getProducts()
-    }, []);
-
-function getProducts(){
-    axios.get('/api/products').then((res) => {
-        setProducts(res.data)
-        console.log(res)
-    })
-}
+    }, [getProducts]);
 
     return (
         <div className="product-list">
