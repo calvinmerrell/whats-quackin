@@ -16,7 +16,7 @@ const AddProducts = (props) => {
 
     function handleAddProduct() {
         let newProduct = { product_type, product_name, call_style, wood_type, price, quantity, image }
-        axios.post(`/api/Products`, newProduct)
+        axios.post(`/api/AddProduct`, newProduct)
             .then((res) => {
             setMessage(product_type + " added")
             setTimeout(() => {

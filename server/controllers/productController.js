@@ -8,10 +8,10 @@ module.exports = {
     },
 
     addProduct: (req,res) => {
-      const db = rew.app.get('db')
-      const { product_type, call_style, wood_type, price, quantity, image} = req.body
+      const db = req.app.get('db')
+      const { product_type,product_name, call_style, wood_type, price, quantity, image} = req.body
 
-      db.add_product ([product_type, product_name, call_style, wood_type, +price, +quantity, image]).then((products)=>{
+      db.add_product ([product_type, product_name, call_style, wood_type, +price, +quantity, image]).then(()=>{
         res.sendStatus(200)
       })
       .catch(err => {
@@ -20,8 +20,6 @@ module.exports = {
     },
 
     editProduct: (req,res) => {
-      console.log(req.params)
-      console.log(req.body)
       const db = req.app.get('db')
       const { product_id } = req.params
       const { price } = req.body
